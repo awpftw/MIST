@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+{% set active_page = "wean" %}
+
+{% block title %}WEAN{% endblock %}
+
+{% block statusMessage %}
+		{% if error %}
+			<div class="alert alert-danger"><strong>Error: </strong> {{ error }}</div>
+		{% endif %}
+		{% if successCheck %}
+			<div class="alert alert-success"><strong>Info: </strong> Valve {{text}} on for {{seconds}} seconds, every {{minutes}} minutes.</div>
+		{% endif %}
+{% endblock %}
+
+
+{% block content %}
+<form action="/wean" method="POST">
+{{ form.hidden_tag() }}
+<div class="container text-center">
+<div class="form-row">
+    
+    	<div class="form-group col-md-1">
+      		{{ form.valve1 }}
+    	</div>
+    	<div class="form-group col-md-1">
+      		{{ form.valve2 }}
+    	</div>
+    	<div class="form-group col-md-4">
+      		{{ form.seconds }}
+    	</div>
+    	<div class="form-group col-md-4">
+	   		{{ form.minutes }}
+		</div>
+		<div class="form-group col-md-2">
+			{{ form.submit }}
+		</div>
+	
+</div>
+</div>
+</form>
+{% endblock %}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>AWP SYSTEMS</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+	<link href="static/narrow-jumbotron.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/mist">Mist</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/wean">Wean</a>
+            </li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">{% block title %}MANUAL{% endblock %}</h3>
+      </div>
+      {% block statusMessage %}{% endblock %}
+      <div class="jumbotron">
+        <p class="lead">Temperature: </p>
+        <p class="lead">Humidity: </p>
+      </div>
+
+      {% block content %}
+      <div class="row">
+        <div class="col-12 text-center">
+        VALVE 1: ON OFF
+        </div>
+        <div class="col-12 text-center">
+        VALVE 2: ON OFF
+        </div>
+      </div>
+
+
+      {% endblock %}
+    </div>
+
+
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+</body>
+</html>
